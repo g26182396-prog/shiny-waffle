@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Govind ❤️ Ekabarna | 1 Year of Eternal Love</title>
+
+<!-- LUXURY ROMANTIC FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primary-pink: #ff2a7a;
+    --neon-rose: #ff0055;
+    --gold: #ffd700;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* DEEP VELVET MIDNIGHT SKY */
+  body {
+    background: radial-gradient(ellipse at bottom, #1d0330 0%, #080114 60%, #020005 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* LIVING BACKGROUND VIDEO */
+  #bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.38;
+    filter: brightness(0.65) saturate(1.2);
+    pointer-events: none;
+  }
+
+  /* CANVASES (1: Night Sky Stars & Hearts, 2: Lightning, 3: Finale Rain of Flowers & Words) */
+  #nightSkyCanvas, #lightningCanvas, #finaleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  #nightSkyCanvas { z-index: 1; }
+  #finaleCanvas { z-index: 5; }
+  #lightningCanvas { z-index: 86; }
+
+  /* FLOATING MUSIC PILL */
+  .music-pill {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 42, 122, 0.25);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 40px;
+    padding: 9px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 25px rgba(255, 42, 122, 0.5);
+    transition: 0.3s;
+  }
+
+  /* 3D THEATRICAL VELVET CURTAINS */
+  .curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 80;
+    display: flex;
+    overflow: hidden;
+  }
+  .curtain {
+    width: 50%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg, #2b000a 0px, #580116 30px, #800322 60px, #580116 90px, #2b000a 120px);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.95);
+    transition: transform 2.2s cubic-bezier(0.76, 0, 0.24, 1);
+    position: relative;
+  }
+  .curtain-left { transform: translateX(0); border-right: 3px solid #ffd700; }
+  .curtain-right { transform: translateX(0); border-left: 3px solid #ffd700; }
+  .curtain-opened .curtain-left { transform: translateX(-102%) skewY(-2deg); }
+  .curtain-opened .curtain-right { transform: translateX(102%) skewY(2deg); }
+
+  /* SCREEN SHAKE ON THUNDER */
+  .thunder-shake {
+    animation: earthquake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  @keyframes earthquake {
+    10%, 90% { transform: translate3d(-4px, 2px, 0); }
+    20%, 80% { transform: translate3d(5px, -3px, 0); }
+    30%, 50%, 70% { transform: translate3d(-7px, 6px, 0); }
+    40%, 60% { transform: translate3d(7px, -4px, 0); }
+  }
+
+  /* GATE SCREEN */
+  .gate-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 90;
+    background: radial-gradient(circle at center, rgba(30, 2, 22, 0.94) 0%, rgba(4, 0, 7, 0.98) 100%);
+    transition: opacity 0.8s ease;
+  }
+  .gate-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 182, 193, 0.4);
+    backdrop-filter: blur(25px);
+    border-radius: 32px;
+    padding: 44px 30px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(255, 20, 147, 0.35);
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 20px;
+    background: rgba(255, 42, 122, 0.25);
+    border: 1px solid rgba(255, 215, 0, 0.55);
+    border-radius: 40px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  }
+  .gate-card h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3.8rem;
+    color: #ff9ebb;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(255, 42, 122, 0.9);
+  }
+  .gate-card p {
+    font-size: 0.96rem;
+    color: #edd3e6;
+    line-height: 1.75;
+    margin-bottom: 26px;
+    font-weight: 400;
+  }
+  .pass-input {
+    width: 100%;
+    padding: 16px 22px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 42, 122, 0.85);
+    background: rgba(10, 0, 15, 0.75);
+    color: #fff;
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    outline: none;
+    margin-bottom: 18px;
+    transition: 0.3s;
+  }
+  .pass-input:focus {
+    box-shadow: 0 0 35px var(--primary-pink);
+    border-color: #ffd700;
+  }
+  .unlock-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(45deg, #ff0055, #ffd700);
+    color: #120008;
+    font-weight: 800;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(255, 0, 85, 0.6);
+    transition: 0.3s transform;
+  }
+  .unlock-btn:active { transform: scale(0.96); }
+
+  /* FLOATING HOLOGRAPHIC STORY SYSTEM */
+  .main-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 100px 20px;
+  }
+
+  .story-container {
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+  }
+
+  .story-stream {
+    display: none;
+    text-align: center;
+    position: relative;
+  }
+
+  .active-stream {
+    display: block;
+    animation: streamAppear 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .exit-stream {
+    display: block;
+    animation: streamDissolve 0.5s ease-in forwards;
+  }
+
+  @keyframes streamAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.92);
+      filter: blur(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes streamDissolve {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.08) translateY(-30px);
+      filter: blur(15px);
+    }
+  }
+
+  .title-script {
+    font-family: 'Parisienne', cursive;
+    font-size: 4rem;
+    color: #ff9ebb;
+    text-shadow: 0 0 35px rgba(255, 42, 122, 0.95), 0 2px 12px rgba(0, 0, 0, 0.95);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .story-para {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.22rem;
+    line-height: 2.2;
+    color: #ffffff;
+    margin-bottom: 24px;
+    font-weight: 400;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.95), 0 0 15px rgba(255, 105, 180, 0.45);
+    letter-spacing: 0.3px;
+  }
+
+  .highlight-quote {
+    background: rgba(255, 20, 147, 0.16);
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    backdrop-filter: blur(12px);
+    padding: 24px 30px;
+    border-radius: 24px;
+    margin: 28px auto;
+    max-width: 740px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(255, 42, 122, 0.25);
+  }
+
+  .tanglish-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    color: #ffd859;
+    line-height: 2.05;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 0 25px rgba(255, 215, 0, 0.7);
+  }
+
+  /* NOSE TOUCH BUTTON */
+  .nose-action-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .nose-btn {
+    background: radial-gradient(circle at 35% 35%, #ff85a1, #d81b60 70%, #8e0038);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    color: #fff;
+    padding: 16px 40px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 10px 35px rgba(216, 27, 96, 0.75), inset 0 2px 8px rgba(255,255,255,0.7);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+  }
+  .nose-btn:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 15px 45px rgba(255, 42, 122, 0.95);
+  }
+  .nose-btn:active {
+    transform: scale(0.92) rotate(-5deg);
+  }
+  .wiggle {
+    animation: noseWiggle 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  @keyframes noseWiggle {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3) rotate(-22deg); }
+    50% { transform: scale(1.25) rotate(18deg); }
+    75% { transform: scale(1.15) rotate(-10deg); }
+    100% { transform: scale(1); }
+  }
+
+  /* PROGRESS DOTS */
+  .dots-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.4s;
+  }
+  .dot.active {
+    background: #ffd700;
+    box-shadow: 0 0 15px #ffd700, 0 0 30px #ff2a7a;
+    transform: scale(1.4);
+  }
+
+  .promise-btn {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #9055ff 100%);
+    border: none;
+    color: #030818;
+    font-weight: 800;
+    padding: 18px 44px;
+    border-radius: 60px;
+    font-size: 1.18rem;
+    cursor: pointer;
+    box-shadow: 0 12px 40px rgba(79, 172, 254, 0.6);
+    transition: 0.3s;
+  }
+  .promise-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+  }
+</style>
+</head>
+<body id="bodyRoot">
+
+<!-- BACKGROUND VIDEO -->
+<video id="bgVideo" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- CANVASES -->
+<canvas id="nightSkyCanvas"></canvas>
+<canvas id="finaleCanvas"></canvas>
+<canvas id="lightningCanvas"></canvas>
+
+<!-- FLOATING MUSIC PILL -->
+<div class="music-pill" id="musicPill" onclick="toggleAudio()">
+  <span id="musicIcon">🎵</span>
+  <span id="musicText">Playing Our Song</span>
+</div>
+
+<!-- 3D VELVET CURTAINS -->
+<div class="curtain-container" id="curtainWrap">
+  <div class="curtain curtain-left"></div>
+  <div class="curtain curtain-right"></div>
+</div>
+
+<!-- STEP 1: PASSWORD GATE SCREEN -->
+<div class="gate-screen" id="gateScreen">
+  <div class="gate-card">
+    <span class="badge">Govind ❤️ Ekabarna</span>
+    <h1>My Ammu</h1>
+    <p>Nov 7, 2025 to Nov 7, 2026.<br>Exactly ethana naala en thangom en idhayatha aatchi panra? Type the magic number of days to unlock our cosmic world:</p>
+    
+    <input type="text" id="passInput" class="pass-input" placeholder="Enter days..." autocomplete="off" />
+    <button class="unlock-btn" onclick="checkPassword()">Unlock Ammu's Heart ✨</button>
+    
+    <div class="hint-text" id="hintMsg" style="color: #ff85a1; margin-top: 15px; font-size: 0.85rem; font-weight: 500;">
+      Hint: Exactly 1 full magical year of love 💖
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: GLOWING FLOATING STORY NARRATION -->
+<div class="main-wrapper" id="mainWrapper">
+  <div class="story-container">
+
+    <!-- CHAPTER 1: The First Love Anniversary Reveal -->
+    <div class="story-stream active-stream" id="chap1">
+      <span class="badge">Chapter 01 • The Beginning of Forever</span>
+      <h1 class="title-script">Happy First Year Anniversary Thangoo! 💖</h1>
+      <p class="story-para">
+        Nov 7, 2025 to Nov 7, 2026. A whole 365 days of having the purest, sweetest soul as my girl, my strength, my priority, and my entire universe. Intha 1 year la ethanaiyo sirippu, chinna chinna sandai, un mela koodura paasam... but at the end of every single day, it is always <strong>Govind and Ekabarna</strong> against the entire world.
+      </p>
+      <div class="highlight-quote tanglish-text">
+        "Happy first year anniversary thangom! I am always with you, en uyir pova varaikkum un kooda mattum dhaan irupen. I need you in every single second of my breath, I really can't live without you baby!"
+      </div>
+      <p class="story-para">
+        Intha ulagathula ethuvume un anbukku eedaaga mudiyathu Ammu. This is not just a 1 year milestone, this is our sacred foundation. We are going to walk through 50, 60, infinity years together holding each other's hands tight!
+      </p>
+
+      <div class="nose-action-container">
+        <button class="nose-btn" onclick="nextChapter(2)">
+          Touch my nose 👃🏻 to read next
+        </button>
+        <div class="dots-nav">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 2: The Unbreakable Vow -->
+    <div class="story-stream" id="chap2">
+      <span class="badge">Chapter 02 • My Sacred Promise</span>
+      <h1 class="title-script">Nammala Yaaralaiyum Pirikka Mudiyathu</h1>
+      <p class="story-para">
+        Ammu, listen to me very carefully. Life will test us with time, distance, and mood swings, but hear this deep in your heart:
+      </p>
+      <div class="highlight-quote tanglish-text">
+        "Nammala yaaralaiyum pirikka mudiyathu naan unna vittu eppavum poga maatan un Mela promise... Neeyum en mela pannu thangoo! We are tied together forever by our souls."
+      </div>
+      <p class="story-para">
+        You are not just a part of my life; you ARE my entire life. Un kitta pesama ennala oru naal kooda nimmathiya irukka mudiyathu. You are my safe haven, my peace, my home. Govind's heartbeat only beats for Ekabarna, and that will never change till my last breath.
+      </p>
+
+      <div class="nose-action-container">
+        <button class="nose-btn" onclick="nextChapter(3)">
+          Touch my nose 👃🏻 for Chapter 3
+        </button>
+        <div class="dots-nav">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 3: October 22 Confession & Deep Gratitude -->
+    <div class="story-stream" id="chap3">
+      <span class="badge">Chapter 03 • October 22 & A Soul Confession</span>
+      <h1 class="title-script">My Birthday, Your Pure Heart... 🎂</h1>
+      <p class="story-para">
+        En thangoo, I have something very deep in my heart that I need to tell you today. <strong>October 22</strong>—en birthday annikku nee enakkaga pannunathu edhume casual illai. The countless lovable gifts, the emotional video edits, the pure effort and sleepless hours you put in just to see a smile on my face...
+      </p>
+      <div class="highlight-quote tanglish-text">
+        "Unmaiyave athu semmaiya irunthuchi Ammu! But na avala kasta paduthitan nu ninaikura appo en manasu evalo vedhanai pattathu theriyuma? I hurt you and made you sad even after you gave me the best birthday gifts of my entire life. En mela thappu dhaan thangom... I am so deeply sorry for hurting you baby."
+      </div>
+      <p class="story-para">
+        Those gifts and videos were the sweetest, most priceless gifts I have ever received. Un anba paarthu en kannula aanandha kaneer vanthuduchu. En ammu kasta patta idhayathukku intha Govind eppavum un kaaladila irunthu unna rani maari paathupan. You made my birthday unforgettable! ❤️
+      </p>
+
+      <div class="nose-action-container">
+        <button class="nose-btn" onclick="nextChapter(4)">
+          Touch my nose 👃🏻 to forgive & continue
+        </button>
+        <div class="dots-nav">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 4: Why We Are The Best Pair In The World -->
+    <div class="story-stream" id="chap4">
+      <span class="badge">Chapter 04 • The World's Best Pair</span>
+      <h1 class="title-script">We Are Magic Together ✨</h1>
+      <p class="story-para">
+        Look at us, Ekabarna. Through every mood swing, through every childish fight, through every call that went past 3 AM—our bond is something this whole world looks at with awe.
+      </p>
+      <div class="highlight-quote tanglish-text">
+        "You know why we are the best pair in the world 🌎? Because our love isn't fake. Un kovam kooda en mela irukkura paasam dhaan. En possessiveness kooda unna tholaikka koodadhu ngra bayam dhaan. En ammu oda sirippu dhaan en ulagathoda velicham!"
+      </div>
+      <p class="story-para">
+        I promise to protect your innocence, wipe every tear that ever tries to touch your cheeks, and prioritize you above everything in this world. You make an ordinary guy like Govind feel like the richest king in the universe.
+      </p>
+
+      <div class="nose-action-container">
+        <button class="nose-btn" onclick="nextChapter(5)">
+          Touch my nose 👃🏻 to reach the Infinity Vow
+        </button>
+        <div class="dots-nav">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 5: The Infinity Year Celebration -->
+    <div class="story-stream" id="chap5">
+      <span class="badge">Chapter 05 • Beyond Infinity</span>
+      <h1 class="title-script">Happy 1st Year to Infinity! ♾️</h1>
+      <p class="story-para">
+        Today marks 365 days, but this is merely <strong>Day 1 of our eternal journey</strong>. Ithe maari namma infinity year anniversary celebration pannanum baby, kandippa pannuvom! 
+      </p>
+      <div class="highlight-quote tanglish-text">
+        "I love you so much baby... Love you so much beyond the skies, beyond the galaxies, beyond this whole world! We are the best pair in the world 🌎. Govind ❤️ Ekabarna forever & ever!"
+      </div>
+      <p class="story-para" style="text-align: center; font-size: 1.35rem; color: #ff9ebb; margin-top: 25px; font-weight: 500;">
+        Will you promise to be mine in every janmam, Thangoo? 💍
+      </p>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <button class="promise-btn" onclick="grandPromiseCelebration()">
+          I PROMISE YOU GOVIND! YES FOREVER! 💖
+        </button>
+      </div>
+
+      <div class="dots-nav" style="margin-top: 35px;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ==========================================
+  // 1. WEB AUDIO API SYNTHESIZER
+  // ==========================================
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  let audioCtx;
+
+  function initAudio() {
+    if (!audioCtx) audioCtx = new AudioContext();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function playSynthesizedThunder() {
+    initAudio();
+    const bufferSize = audioCtx.sampleRate * 3.5;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const output = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+
+    const whiteNoise = audioCtx.createBufferSource();
+    whiteNoise.buffer = buffer;
+
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(320, audioCtx.currentTime);
+    filter.frequency.exponentialRampToValueAtTime(35, audioCtx.currentTime + 3.2);
+
+    const gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(1.9, audioCtx.currentTime + 0.12);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 3.4);
+
+    whiteNoise.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    whiteNoise.start();
+  }
+
+  function playMagicChime() {
+    initAudio();
+    const notes = [523.25, 659.25, 783.99, 1046.50];
+    notes.forEach((freq, idx) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.08);
+
+      gain.gain.setValueAtTime(0, audioCtx.currentTime + idx * 0.08);
+      gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + idx * 0.08 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.08 + 0.45);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(audioCtx.currentTime + idx * 0.08);
+      osc.stop(audioCtx.currentTime + idx * 0.08 + 0.5);
+    });
+  }
+
+  // ==========================================
+  // 2. PROCEDURAL CANVAS LIGHTNING ENGINE
+  // ==========================================
+  const lCanvas = document.getElementById('lightningCanvas');
+  const lCtx = lCanvas.getContext('2d');
+
+  function resizeLightning() {
+    lCanvas.width = window.innerWidth;
+    lCanvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeLightning);
+  resizeLightning();
+
+  function drawLightningBolt(x1, y1, x2, y2, displace, depth) {
+    if (depth <= 0) {
+      lCtx.beginPath();
+      lCtx.moveTo(x1, y1);
+      lCtx.lineTo(x2, y2);
+      lCtx.stroke();
+      return;
+    }
+    const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * displace;
+    const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * displace;
+
+    drawLightningBolt(x1, y1, midX, midY, displace / 1.8, depth - 1);
+    drawLightningBolt(midX, midY, x2, y2, displace / 1.8, depth - 1);
+
+    if (Math.random() < 0.28) {
+      const branchX = midX + (Math.random() - 0.5) * displace * 1.5;
+      const branchY = midY + Math.random() * displace * 1.5;
+      drawLightningBolt(midX, midY, branchX, branchY, displace / 2, depth - 2);
+    }
+  }
+
+  function triggerLightningShow() {
+    let strikes = 0;
+    const interval = setInterval(() => {
+      lCtx.clearRect(0, 0, lCanvas.width, lCanvas.height);
+      const startX = Math.random() * lCanvas.width;
+      const endX = startX + (Math.random() - 0.5) * 400;
+
+      lCtx.shadowColor = '#00f2fe';
+      lCtx.shadowBlur = 25;
+      lCtx.strokeStyle = '#ffffff';
+      lCtx.lineWidth = Math.random() * 3 + 2;
+
+      drawLightningBolt(startX, 0, endX, lCanvas.height * 0.85, 200, 5);
+
+      strikes++;
+      if (strikes > 5) {
+        clearInterval(interval);
+        setTimeout(() => lCtx.clearRect(0, 0, lCanvas.width, lCanvas.height), 200);
+      }
+    }, 110);
+  }
+
+  // ==========================================
+  // 3. BACKGROUND NIGHT SKY (STARS & HEARTS)
+  // ==========================================
+  const skyCanvas = document.getElementById('nightSkyCanvas');
+  const sCtx = skyCanvas.getContext('2d');
+  let sWidth, sHeight;
+
+  let stars = [];
+  let floatingHearts = [];
+  let meteors = [];
+
+  function resizeSky() {
+    sWidth = skyCanvas.width = window.innerWidth;
+    sHeight = skyCanvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeSky);
+  resizeSky();
+
+  class Star {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * sWidth;
+      this.y = Math.random() * sHeight;
+      this.size = Math.random() * 1.8 + 0.4;
+      this.alpha = Math.random() * 0.7 + 0.3;
+      this.twinkleSpeed = Math.random() * 0.04 + 0.01;
+      this.twinkleDir = Math.random() > 0.5 ? 1 : -1;
+      this.color = Math.random() > 0.75 ? '#ff9ebb' : '#ffffff';
+    }
+    update() {
+      this.alpha += this.twinkleSpeed * this.twinkleDir;
+      if (this.alpha > 1) { this.alpha = 1; this.twinkleDir = -1; }
+      if (this.alpha < 0.2) { this.alpha = 0.2; this.twinkleDir = 1; }
+    }
+    draw() {
+      sCtx.save();
+      sCtx.globalAlpha = this.alpha;
+      sCtx.fillStyle = this.color;
+      sCtx.beginPath();
+      sCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      sCtx.fill();
+      sCtx.restore();
+    }
+  }
+
+  class FloatingHeart {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * sWidth;
+      this.y = sHeight + Math.random() * 80;
+      this.size = Math.random() * 18 + 12;
+      this.speedY = -(Math.random() * 0.9 + 0.5);
+      this.speedX = Math.random() * 0.8 - 0.4;
+      this.alpha = Math.random() * 0.65 + 0.35;
+      this.wobble = Math.random() * Math.PI * 2;
+    }
+    update() {
+      this.y += this.speedY;
+      this.wobble += 0.03;
+      this.x += this.speedX + Math.sin(this.wobble) * 0.6;
+      if (this.y < -40) this.reset();
+    }
+    draw() {
+      sCtx.save();
+      sCtx.globalAlpha = this.alpha;
+      sCtx.font = `${this.size}px serif`;
+      sCtx.fillText('💖', this.x, this.y);
+      sCtx.restore();
+    }
+  }
+
+  for (let i = 0; i < 110; i++) stars.push(new Star());
+  for (let i = 0; i < 22; i++) floatingHearts.push(new FloatingHeart());
+
+  function animateSky() {
+    sCtx.clearRect(0, 0, sWidth, sHeight);
+    stars.forEach(st => { st.update(); st.draw(); });
+    floatingHearts.forEach(fh => { fh.update(); fh.draw(); });
+    requestAnimationFrame(animateSky);
+  }
+  animateSky();
+
+  // ==========================================
+  // 4. GRAND FINALE ENGINE (FLOWERS, UMMAAAH, TIK TAK, SHARANGE)
+  // ==========================================
+  const fCanvas = document.getElementById('finaleCanvas');
+  const fCtx = fCanvas.getContext('2d');
+  let fWidth, fHeight;
+  let finaleRain = [];
+  let isFinaleActive = false;
+
+  function resizeFinale() {
+    fWidth = fCanvas.width = window.innerWidth;
+    fHeight = fCanvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeFinale);
+  resizeFinale();
+
+  const finaleItems = [
+    { type: 'text', val: 'Ummaaah 😘💋', color: '#ff2a7a', size: 24 },
+    { type: 'text', val: 'Tik Tak 💓', color: '#ffd700', size: 22 },
+    { type: 'text', val: 'Sharange ✨', color: '#00f2fe', size: 22 },
+    { type: 'text', val: 'Govind ❤️ Ekabarna', color: '#ff8fb1', size: 24 },
+    { type: 'flower', val: '🌹', size: 28 },
+    { type: 'flower', val: '🌸', size: 26 },
+    { type: 'flower', val: '💐', size: 28 }
+  ];
+
+  class FinaleParticle {
+    constructor() {
+      const item = finaleItems[Math.floor(Math.random() * finaleItems.length)];
+      this.type = item.type;
+      this.val = item.val;
+      this.color = item.color || '#fff';
+      this.size = item.size;
+      this.x = Math.random() * fWidth;
+      this.y = -Math.random() * 200 - 30;
+      this.speedY = Math.random() * 1.5 + 0.8; // Falls down slowly
+      this.speedX = Math.random() * 1.2 - 0.6;
+      this.rotation = Math.random() * 360;
+      this.rotSpeed = Math.random() * 2 - 1;
+      this.alpha = Math.random() * 0.4 + 0.6;
+      this.wobble = Math.random() * Math.PI * 2;
+    }
+    update() {
+      this.y += this.speedY;
+      this.wobble += 0.025;
+      this.x += this.speedX + Math.sin(this.wobble) * 1.2;
+      this.rotation += this.rotSpeed;
+
+      if (this.y > fHeight + 50) {
+        this.y = -50;
+        this.x = Math.random() * fWidth;
+      }
+    }
+    draw() {
+      fCtx.save();
+      fCtx.globalAlpha = this.alpha;
+      fCtx.translate(this.x, this.y);
+      fCtx.rotate((this.rotation * Math.PI) / 180);
+
+      if (this.type === 'text') {
+        fCtx.font = `italic 700 ${this.size}px 'Playfair Display', serif`;
+        fCtx.fillStyle = this.color;
+        fCtx.shadowColor = this.color;
+        fCtx.shadowBlur = 12;
+        fCtx.fillText(this.val, 0, 0);
+      } else {
+        fCtx.font = `${this.size}px serif`;
+        fCtx.shadowColor = '#ff2a7a';
+        fCtx.shadowBlur = 10;
+        fCtx.fillText(this.val, 0, 0);
+      }
+      fCtx.restore();
+    }
+  }
+
+  function startGrandFinaleRain() {
+    isFinaleActive = true;
+    for (let i = 0; i < 65; i++) {
+      finaleRain.push(new FinaleParticle());
+    }
+    animateFinale();
+  }
+
+  function animateFinale() {
+    if (!isFinaleActive) return;
+    fCtx.clearRect(0, 0, fWidth, fHeight);
+    finaleRain.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animateFinale);
+  }
+
+  // ==========================================
+  // 5. UNLOCK & TRANSITIONS
+  // ==========================================
+  function checkPassword() {
+    const input = document.getElementById('passInput').value.trim().toLowerCase();
+    const hint = document.getElementById('hintMsg');
+
+    if (input === "365" || input.includes("365")) {
+      initAudio();
+      triggerGrandCurtainReveal();
+    } else {
+      hint.innerText = "Ayyayo Ammu! Nov 7, 2025 to Nov 7, 2026 is exactly 365 days! Type 365 thangoo ❤️";
+      hint.style.color = "#ffd700";
+      const box = document.getElementById('passInput');
+      box.style.transform = "translateX(-10px)";
+      setTimeout(() => box.style.transform = "translateX(10px)", 70);
+      setTimeout(() => box.style.transform = "translateX(-6px)", 140);
+      setTimeout(() => box.style.transform = "translateX(0)", 210);
+    }
+  }
+
+  function triggerGrandCurtainReveal() {
+    document.getElementById('gateScreen').style.opacity = '0';
+    setTimeout(() => document.getElementById('gateScreen').style.display = 'none', 600);
+
+    playSynthesizedThunder();
+    triggerLightningShow();
+    document.getElementById('bodyRoot').classList.add('thunder-shake');
+    setTimeout(() => document.getElementById('bodyRoot').classList.remove('thunder-shake'), 900);
+
+    const curtain = document.getElementById('curtainWrap');
+    curtain.classList.add('curtain-opened');
+
+    playVideoAndAudio();
+
+    setTimeout(() => {
+      document.getElementById('mainWrapper').style.display = 'flex';
+      curtain.style.display = 'none';
+      document.getElementById('musicPill').style.display = 'flex';
+    }, 1300);
+  }
+
+  // Media controllers
+  const audio = document.getElementById('bgMusic');
+  const video = document.getElementById('bgVideo');
+
+  function playVideoAndAudio() {
+    if (video) video.play().catch(e => console.log("Video wait"));
+    if (audio) audio.play().catch(e => console.log("Audio wait"));
+  }
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      document.getElementById('musicText').innerText = "Playing Our Song";
+      document.getElementById('musicIcon').innerText = "🎵";
+    } else {
+      audio.pause();
+      document.getElementById('musicText').innerText = "Music Paused";
+      document.getElementById('musicIcon').innerText = "🔇";
+    }
+  }
+
+  // Nose touch chapter transitions
+  let isTransitioning = false;
+  function nextChapter(nextIndex) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    playMagicChime();
+    const btn = event.currentTarget;
+    btn.classList.add('wiggle');
+
+    const currentStream = document.querySelector('.story-stream.active-stream');
+    const targetStream = document.getElementById('chap' + nextIndex);
+
+    if (currentStream && targetStream) {
+      currentStream.classList.remove('active-stream');
+      currentStream.classList.add('exit-stream');
+
+      setTimeout(() => {
+        currentStream.classList.remove('exit-stream');
+        targetStream.classList.add('active-stream');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        btn.classList.remove('wiggle');
+        isTransitioning = false;
+      }, 500);
+    }
+  }
+
+  // PROMISE CLICK: THUNDER, LIGHTNING, FLOWERS, UMMAAAH, TIK TAK & SHARANGE!
+  function grandPromiseCelebration() {
+    // 1. Thunder & Lightning Strike Again
+    playSynthesizedThunder();
+    triggerLightningShow();
+    document.getElementById('bodyRoot').classList.add('thunder-shake');
+    setTimeout(() => document.getElementById('bodyRoot').classList.remove('thunder-shake'), 900);
+
+    // 2. Flowers & Words Fall Down Slowly
+    startGrandFinaleRain();
+
+    // 3. Playful Alert Message
+    setTimeout(() => {
+      alert("UMMAAAH! 💋 En Thangom Promise Pannitta! Govind & Ekabarna are bonded for infinity janmams! 💍💖");
+    }, 600);
+  }
+</script>
+</body>
+</html>
